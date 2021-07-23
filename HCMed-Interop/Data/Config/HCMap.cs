@@ -12,6 +12,18 @@ namespace HCMed_Interop.Data.Config
         public PacienteMap()
         {
             this.HasKey(t => t.Id);
+
+            this.HasMany(t => t.Consultas)
+                .WithRequired(x => x.Paciente)
+                .HasForeignKey(t => t.IdPaciente);
+
+            this.HasMany(t => t.Internacoes)
+                .WithRequired(x => x.Paciente)
+                .HasForeignKey(t => t.IdPaciente);
+
+            this.HasMany(t => t.RelatoriosMedicos)
+                .WithRequired(x => x.Paciente)
+                .HasForeignKey(t => t.IdPaciente);
         }
     }
 
@@ -28,6 +40,10 @@ namespace HCMed_Interop.Data.Config
             this.HasOptional(t => t.Conselho)
                 .WithMany(x => x.Profissionais)
                 .HasForeignKey(t => t.IdConselho);
+
+            this.HasMany(t => t.Consultas)
+                .WithRequired(x => x.Doutor)
+                .HasForeignKey(x => x.IdDoutor);
         }
     }
 
@@ -36,8 +52,6 @@ namespace HCMed_Interop.Data.Config
         public EspecialidadeMap()
         {
             this.HasKey(t => t.Id);
-
-
         }
     }
 
@@ -54,6 +68,10 @@ namespace HCMed_Interop.Data.Config
         public UFMap()
         {
             this.HasKey(t => t.Id);
+
+            this.HasMany(t => t.Conselhos)
+                .WithRequired(x => x.Estado)
+                .HasForeignKey(x => x.IdEstado);
         }
     }
 
@@ -70,6 +88,14 @@ namespace HCMed_Interop.Data.Config
         public RelatorioMedicoMap()
         {
             this.HasKey(t => t.Id);
+
+            this.HasRequired(t => t.Doutor)
+                .WithMany(x => x.RelatoriosMedicos)
+                .HasForeignKey(t => t.IdProfissional);
+
+            this.HasRequired(t => t.Paciente)
+                .WithMany(x => x.RelatoriosMedicos)
+                .HasForeignKey(t => t.IdPaciente);
         }
     }
 

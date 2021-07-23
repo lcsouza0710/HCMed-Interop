@@ -17,15 +17,19 @@ namespace HCMed_Interop.Data.Entities
 
         public int IdEspecialidade { get; set; }
 
-        public Especialidade Especialidade { get; set; }
-
         public string Matricula { get; set; }
 
         public int IdConselho { get; set; }
 
-        public Conselho Conselho { get; set; }
-
         public string MatriculaConselho { get; set; }
+
+        public virtual Especialidade Especialidade { get; set; }
+        
+        public virtual Conselho Conselho { get; set; }
+
+        public virtual List<Consulta> Consultas { get; set; }
+
+        public virtual List<RelatorioMedico> RelatoriosMedicos { get; set; }
 
         public ProfissionalSaude()
         {
@@ -118,6 +122,8 @@ namespace HCMed_Interop.Data.Entities
         public string Nome { get; set; }
 
         public string Sigla { get; set; }
+
+        public virtual List<Conselho> Conselhos { get; set; }
 
         public UF()
         {
