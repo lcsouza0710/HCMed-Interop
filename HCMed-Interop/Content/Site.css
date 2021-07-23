@@ -1,0 +1,32 @@
+﻿.modal.aside-lg .modal-dialog {
+    width: 750px !important;
+}
+
+.modal.aside-md .modal-dialog {
+    width: 450px !important;
+}
+
+.dataTableLayout {
+    table-layout: fixed;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+}
+
+.table-cell-no-bordered td {
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.environment-notify {
+    background-color: lightyellow;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    color: red;
+    padding: 2px 8px;
+    border-bottom: 0.5px dashed red;
+}
+
+.environment-notify .close{
+    font-size: 13px;
+}

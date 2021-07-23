@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HCMed-Interop", "HCMed-Interop\HCMed-Interop.csproj", "{0AD86AF5-0CA0-4116-9E28-B765FCED5C7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Homolog|Any CPU = Homolog|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AD86AF5-0CA0-4116-9E28-B765FCED5C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD86AF5-0CA0-4116-9E28-B765FCED5C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD86AF5-0CA0-4116-9E28-B765FCED5C7D}.Homolog|Any CPU.ActiveCfg = Homolog|Any CPU
+		{0AD86AF5-0CA0-4116-9E28-B765FCED5C7D}.Homolog|Any CPU.Build.0 = Homolog|Any CPU
+		{0AD86AF5-0CA0-4116-9E28-B765FCED5C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AD86AF5-0CA0-4116-9E28-B765FCED5C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

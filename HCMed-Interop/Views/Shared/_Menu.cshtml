@@ -1,0 +1,50 @@
+﻿<ul class="nav nav-list">
+    <li id="mn-i" class="">
+        <a href="@Url.Action("Index", "Home")">
+            <i class="menu-icon fa fa-desktop"></i>
+            Home
+        </a>
+        <a href="@Url.Action("Index", "Paciente")">
+            <i class="menu-icon fa fa-user"></i>
+            Paciente
+        </a>
+        <b class="arrow"></b>
+    </li>
+    @if (User.IsInHCRole("Menu I", "Menu II"))
+    {
+        <li>
+            <a href="#" class="dropdown-toggle">
+                <i class="menu-icon fa fa-cogs"></i>
+                <span class="menu-text">
+                    Menu
+                </span>
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu">
+                @if (User.IsInHCRole("Menu I"))
+                {
+                    <li id="mn-ii" class="">
+                        <a href="@Url.Action("MenuI", "Menu")">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Menu I
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                }
+                @if (User.IsInHCRole("Menu II"))
+                {
+                    <li id="mn-iii" class="">
+                        <a href="@Url.Action("MenuII", "Menu")">
+                            <i class="menu-icon fa fa-caret-right"></i>
+                            Menu II
+                        </a>
+                        <b class="arrow"></b>
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ul><!-- /.nav-list -->

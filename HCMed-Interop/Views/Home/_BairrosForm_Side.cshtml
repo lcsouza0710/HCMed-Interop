@@ -1,0 +1,60 @@
+﻿@model HCMed_Interop.Models.BairroViewModel
+
+<div id="menu-frm-bairros" class="modal aside" data-body-scroll="true" data-offset="true" data-placement="right" data-fixed="true" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header no-padding">
+                <div class="table-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="white">&times;</span>
+                    </button>
+                    <span class="title">
+
+                    </span>
+                </div>
+            </div>
+
+            <div class="modal-body">
+
+                <form action="#" method="post" id="frm-bairros" name="frm-bairros">
+                    @Html.HiddenFor(x => x.Id)
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Bairro, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.Bairro, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Bairro, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.IdCidade, new { @class = "control-label" })
+                                <input type="text" name="ac-cidade" id="ac-cidade" class="form-control ac-cidade" />
+                                @Html.HiddenFor(x => x.IdCidade)
+                                @Html.ValidationMessageFor(m => m.IdCidade, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>
+                                <button class="btn btn-sm btn-success btn-block" type="submit">Salvar</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <button class="btn btn-xs btn-link" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Acesso Negado";
+}
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#returnUrl').val('@ViewBag.ReturnUrl');
+        });
+    </script>
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="well">
+            <h4 class="smaller lighter green">Acesso Negado</h4>
+            <p>
+                Olá @User.Identity.Name seu perfil não possui permissão para acessar está funcionalidade,
+                você pode realizar as seguintes ações:
+            </p>
+
+            <ul class="list-unstyled">
+                <li>
+                    <i class="ace-icon fa fa-caret-right blue"></i>
+                    Entre em contato com o administrador do sistema ou com a informática local de seu instituto solicitando o
+                    devido acesso
+                </li>
+                <li>
+                    <i class="ace-icon fa fa-caret-right blue"></i>
+                    Se você já solicitou o acesso e mesmo assim ainda não consegui acessar, <a href="javascript:document.getElementById('logoutForm').submit()" style="text-decoration:underline;">clique aqui</a>
+                    para sair do sistema e acesse novamente com seu usuário e senha (está operação fará ter efeito qualquer alteração realizada em seu perfil)
+                </li>
+                <li>
+                    <i class="ace-icon fa fa-caret-right blue"></i>
+                    Se já realizou o segundo passo e o probelma ainda persiste, por favor entre em contato com a informática
+                    local de seu instituto
+                </li>
+            </ul>
+
+            <hr />
+            <p>
+                <label>
+                    Url de destino
+                </label>
+                <input type="text" class="form-control" value="@ViewBag.ReturnUrl" readonly />
+            </p>
+        </div>
+    </div>
+</div>

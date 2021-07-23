@@ -1,0 +1,10 @@
+﻿@model HCMed_Interop.Models.PacienteViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>@string.Format("{0} {1}", Model.Paciente.PrimeiroNome, Model.Paciente.Sobrenome)</p>
+
