@@ -53,29 +53,6 @@ namespace HCMed_Interop.Data.Entities
             this.IdResponsavel = idResponsavel;
             this.Resumo = resumo;
         }
-
-        public Internacao(
-           int id,
-           int idPaciente,
-           DateTime inicio,
-           DateTime fim,
-           ProfissionalSaude responsavel,
-           Paciente paciente,
-           StatusInternacao status,
-           int idResponsavel,
-           string resumo
-           )
-        {
-            this.Id = id;
-            this.IdPaciente = idPaciente;
-            this.Inicio = inicio;
-            this.Fim = fim;
-            this.Responsavel = responsavel;
-            this.Paciente = paciente;
-            this.Status = status;
-            this.IdResponsavel = idResponsavel;
-            this.Resumo = resumo;
-        }
     }
 
     public enum StatusInternacao
@@ -118,26 +95,6 @@ namespace HCMed_Interop.Data.Entities
             this.IdResponsavel = idResponsavel;
             this.DataTransicao = dataTransicao;
             this.ResumoTransicao = resumoTransicao;
-        }
-
-        public TransicaoCuidados(
-            int id,
-            int idPaciente,
-            int idResponsavel,
-            DateTime dataTransicao,
-            string resumoTransicao,
-            Paciente paciente,
-            ProfissionalSaude responsavel 
-            )
-        {
-            this.Id = id;
-            this.IdPaciente = idPaciente;
-            this.IdResponsavel = idResponsavel;
-            this.DataTransicao = dataTransicao;
-            this.ResumoTransicao = resumoTransicao;
-            this.Paciente = paciente;
-            this.Responsavel = responsavel;
-
         }
     }
 

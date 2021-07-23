@@ -11,7 +11,7 @@ namespace HCMed_Interop.Data.Entities
 
         public int IdPaciente { get; set; }
 
-        public int IdProfissional { get; set; }
+        public int IdDoutor { get; set; }
 
         public DateTime DataHorarioConsulta { get; set; }
 
@@ -29,35 +29,16 @@ namespace HCMed_Interop.Data.Entities
         public Consulta(
             int id, 
             int idPaciente, 
-            int idProfissional, 
+            int idDoutor, 
             DateTime dataHorarioConsulta,
             StatusConsulta status
             )
         {
             this.Id = id;
             this.IdPaciente = idPaciente;
-            this.IdProfissional = idProfissional;
+            this.IdDoutor = idDoutor;
             this.DataHorarioConsulta = dataHorarioConsulta;
             this.Status = status;
-        }
-
-        public Consulta(
-            int id, 
-            int idPaciente, 
-            int idProfissional, 
-            DateTime dataHorarioConsulta,
-            StatusConsulta status,
-            Paciente paciente,
-            ProfissionalSaude doutor
-            )
-        {
-            this.Id = id;
-            this.IdPaciente = idPaciente;
-            this.IdProfissional = idProfissional;
-            this.DataHorarioConsulta = dataHorarioConsulta;
-            this.Status = status;
-            this.Paciente = paciente;
-            this.Doutor = doutor;
         }
     }
 
@@ -76,9 +57,11 @@ namespace HCMed_Interop.Data.Entities
 
         public int IdProfissional { get; set; }
 
+        public int IdDiagnostico { get; set; }
+
         public DateTime Data { get; set; }
 
-        public CID Diagnostico { get; set; }
+        public virtual CID Diagnostico { get; set; }
 
         public virtual Paciente Paciente { get; set; }
 
@@ -90,37 +73,18 @@ namespace HCMed_Interop.Data.Entities
         }
 
         public RelatorioMedico(
-            int id, 
-            int idPaciente,
-            int idProfissional,
-            DateTime data,
-            CID diagnostico
-            )
-        {
-            this.Id = id;
-            this.IdPaciente = idPaciente;
-            this.IdProfissional = idProfissional;
-            this.Data = data;
-            this.Diagnostico = diagnostico;
-        }
-
-        public RelatorioMedico(
             int id,
             int idPaciente,
             int idProfissional,
             DateTime data,
-            CID diagnostico,
-            Paciente paciente,
-            ProfissionalSaude doutor
+            int idDiagnostico
             )
         {
             this.Id = id;
             this.IdPaciente = idPaciente;
             this.IdProfissional = idProfissional;
             this.Data = data;
-            this.Diagnostico = diagnostico;
-            this.Paciente = paciente;
-            this.Doutor = doutor;
+            this.IdDiagnostico = idDiagnostico;
         }
     }
 

@@ -52,30 +52,6 @@ namespace HCMed_Interop.Data.Entities
             this.MatriculaConselho = matriculaConselho;
         }
 
-        public ProfissionalSaude(
-            int id,
-            string primeiroNome,
-            string sobrenome,
-            CategoriaProfissional categoria,
-            int idEspecialidade,
-            Especialidade especialidade,
-            string matricula,
-            int idConselho,
-            Conselho conselho,
-            string matriculaConselho)
-        {
-            this.Id = id;
-            this.PrimeiroNome = primeiroNome;
-            this.Sobrenome = sobrenome;
-            this.Categoria = categoria;
-            this.IdEspecialidade = idEspecialidade;
-            this.Especialidade = especialidade;
-            this.Matricula = matricula;
-            this.IdConselho = idConselho;
-            this.Conselho = conselho;
-            this.MatriculaConselho = matriculaConselho;
-        }
-
     }
 
     public enum CategoriaProfissional
@@ -115,7 +91,9 @@ namespace HCMed_Interop.Data.Entities
 
         public string Sigla { get; set; }
 
-        public UF Estado { get; set; }
+        public int IdEstado { get; set; }
+
+        public virtual UF Estado { get; set; }
 
         public virtual List<ProfissionalSaude> Profissionais { get; set; }
 
@@ -124,19 +102,12 @@ namespace HCMed_Interop.Data.Entities
 
         }
 
-        public Conselho(int id, string descricao, string sigla)
+        public Conselho(int id, string descricao, string sigla, int idEstado)
         {
             this.Id = id;
             this.Descricao = descricao;
             this.Sigla = sigla;
-        }
-
-        public Conselho(int id, string descricao, string sigla, UF uf)
-        {
-            this.Id = id;
-            this.Descricao = descricao;
-            this.Sigla = sigla;
-            this.Estado = uf;
+            this.IdEstado = idEstado;
         }
     }
 
